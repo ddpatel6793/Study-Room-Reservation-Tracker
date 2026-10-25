@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="StudyRoomTracker/StudyRoomTracker.vcxproj" Id="472ead30-1978-418d-81b1-d8c8dc3631bd" />
+</Solution>
