@@ -139,7 +139,13 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ReservableRegRoom.cpp" />
+    <ClCompile Include="Room.cpp" />
     <ClCompile Include="StudyRoomTracker.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ReservableRegRoom.h" />
+    <ClInclude Include="Room.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

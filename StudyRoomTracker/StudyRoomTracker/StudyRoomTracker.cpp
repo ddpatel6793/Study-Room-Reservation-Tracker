@@ -1,4 +1,7 @@
 #include <iostream>
+#include "ReservableRegRoom.h"
+
+
 
 int main() {
 	std::cout << "Welcome to study Room Reservation Tracker!\n";
@@ -8,5 +11,10 @@ int main() {
 	std::cout << "Wingless was here\n";
 
 	std::cout << "Dhrusha: GitHub collaboration test successful!\n";
+
+	ReservableRegRoom room101(101, 1, 5);
+	std::cout << "Room Number: " << room101.getRoomNumber();
+
+
 	return 0;
 }
