@@ -148,6 +148,7 @@
   <ItemGroup>
     <ClInclude Include="PersonInformation.h" />
     <ClInclude Include="ReservableRegRoom.h" />
+    <ClInclude Include="ReservationManager.h" />
     <ClInclude Include="Room.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
