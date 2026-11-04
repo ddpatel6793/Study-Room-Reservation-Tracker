@@ -53,7 +53,7 @@ std::string ReservationManager::reserveRoom(int roomNumber, std::string name, st
 		return reservationMessage;
 	}
 	else {
-		return "Room is not found!";
+		throw std::runtime_error("room not found");
 
 	}
 }

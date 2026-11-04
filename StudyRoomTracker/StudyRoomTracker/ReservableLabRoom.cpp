@@ -10,13 +10,13 @@ std::string ReservableLabRoom::reserve(std::string name, std::string type) {
         if (this->getIsReserved() == false) {
             setIsReserved(true);
             setPersonInfo(name, type);
-            return "Room is reserved!";
+            return "Room is reserved!\n";
         }
         else {
-            return "Sorry but the room is not available";
+            throw std::runtime_error("room not available");
         }
     }
     else {
-        return "Sorry this study room is only for teaching assistants";
+        throw std::runtime_error("room only for ta");
     }
 }

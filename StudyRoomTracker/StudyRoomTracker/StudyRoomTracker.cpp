@@ -1,5 +1,6 @@
 #include <iostream>
 #include "ReservationManager.h"
+#include <string>
 
 int main() {
 	std::cout << "Welcome to study Room Reservation Tracker!\n\n";
@@ -17,9 +18,25 @@ int main() {
 			reservationManagerObject.viewAllRooms();
 		}
 		else if (menuOption == 2) {
-			std::cout << reservationManagerObject.reserveRoom(101, "Dhrusha", "TA") << "\n\n";
-			std::cout << reservationManagerObject.reserveRoom(101, "Kirill", "TA") << "\n\n";
-			std::cout << reservationManagerObject.reserveRoom(103, "Kirill", "Student") << "\n\n";
+			std::cout << "What room would you like to reserve?: ";
+			int room;
+			std::cin >> room;
+			std::cout << "What is your name?: ";
+			std::string name;
+			std::cin >> name;
+			std::cout << "Are you a student or TA? (Type 'Student' or 'TA'): ";
+			std::string studentType;
+			std::cin >> studentType;
+			try {
+				reservationManagerObject.reserveRoom(room, name, studentType);
+				std::cout << "Room successfully reserved";
+			}
+			catch (const std::runtime_error& e) {
+				std::cout << "Sorry, your room could not be found. Error: " << e.what() << std::endl;
+			}
+			catch (...) {
+				std::cout << "Sorry, but your room could not be reserved. You either had invalid input or tried to reserve an unavailable room.\n";
+			}
 
 		}
 		else {

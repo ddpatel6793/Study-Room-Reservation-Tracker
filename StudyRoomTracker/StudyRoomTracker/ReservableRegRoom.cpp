@@ -1,16 +1,17 @@
 #include"ReservableRegRoom.h"
 #include "Room.h"
+#include <iostream>
 ReservableRegRoom::ReservableRegRoom(int number, int floor, int capacity)
     : Room(number, floor, capacity) {
     // ReservableRegRoom class constructor body
 }
 std::string ReservableRegRoom::reserve(std::string name, std::string type) {
     if (this->getIsReserved() == true) {
-        return "Sorry but room is unavailable unavailable";
+        throw std::runtime_error("room not available");
     }
     else {
         setIsReserved(true);
         setPersonInfo(name, type);
-        return "Room Reserved!";
+        return "Room Reserved!\n";
     }
 }
