@@ -9,7 +9,7 @@ public:
     Person();
     Person(std::string m_name, std::string studentType);
     std::string getName() const;
-    bool checkTA() const ;
+    std::string getStudentType() const ;
     void setName(std::string newName);
-    void setTA(bool status);
+    void setStudentType(std::string newType);
 };

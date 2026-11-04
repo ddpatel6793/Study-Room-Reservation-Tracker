@@ -1,26 +1,29 @@
 #pragma once
 #include<string>
 #include "PersonInformation.h"
-class Room { // Room abstract class , it has virtual methods
+class Room { 
 	private:
-		int roomNumber; //stores 101, 102, 203, etc. 
-		int capacity; //how many students can it fit
-		bool isReserved; //wther the room is occupied or reserved
+		int roomNumber;
+		int capacity; 
+		bool isReserved; 
 		Person personInfo;
 		int floor; 
 
 
-	public:
-		Room(int roomNumber, int floorNumber, int capacity,std::string name, std::string T); //Room class constructor
-		int getRoomNumber() const; //returns roomNumber
-		int getCapacity() const; // returns capacity
-		int getFloor() const; 
-		bool getIsReserved() const; // returns resrvation status
-		virtual bool reserve() = 0; // virtual reservation function, with different rules in each derived class
-		virtual void cancelReservation(); // cancels a valid reservation
 
-		
-		virtual ~Room(); // allows safe cleanup through a base pointer. 
+	public:
+		Room(int roomNumber, int floorNumber, int capacity,std::string name, std::string type); //Room class constructor
+		Room(int roomNumber, int floorNumber, int capacity, bool isReserved);
+		Room(int roomNumber, int floorNumber, int capacity);
+		int getRoomNumber() const; 
+		int getCapacity() const; 
+		int getFloor() const; 
+		bool getIsReserved() const; 
+		virtual std::string reserve(std::string name, std::string type) = 0; 
+		virtual void cancelReservation(); 
+		void setIsReserved(bool isAvailable); 
+		void setPersonInfo(std::string name, std::string type);
+		virtual ~Room(); 
 
 
 };
