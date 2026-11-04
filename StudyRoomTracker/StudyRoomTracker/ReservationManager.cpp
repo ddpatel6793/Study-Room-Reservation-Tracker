@@ -6,6 +6,6 @@
 #include "ReservableLabRoom.h"
 #include "PersonInformation.h"
 
-ReservationManager::void intalizeRooms() {
+void ::ReservationManager:: intalizeRooms() {
 
 }
