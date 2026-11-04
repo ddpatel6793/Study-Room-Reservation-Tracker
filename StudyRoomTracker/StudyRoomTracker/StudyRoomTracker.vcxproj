@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="PersonInformation.cpp" />
     <ClCompile Include="ReservableRegRoom.cpp" />
+    <ClCompile Include="ReservationManager.cpp" />
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="StudyRoomTracker.cpp" />
   </ItemGroup>
