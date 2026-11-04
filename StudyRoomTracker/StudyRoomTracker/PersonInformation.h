@@ -4,10 +4,10 @@
 class Person {
 private:
     std::string name;
-    bool isTA;
+    std::string studentType;
 public:
     Person();
-    Person(std::string& m_name, bool m_isTA);
+    Person(std::string m_name, std::string studentType);
     std::string getName() const;
     bool checkTA() const ;
     void setName(std::string newName);

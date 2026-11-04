@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="PersonInformation.cpp" />
+    <ClCompile Include="ReservableLabRoom.cpp" />
     <ClCompile Include="ReservableRegRoom.cpp" />
     <ClCompile Include="ReservationManager.cpp" />
     <ClCompile Include="Room.cpp" />
@@ -147,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PersonInformation.h" />
+    <ClInclude Include="ReservableLabRoom.h" />
     <ClInclude Include="ReservableRegRoom.h" />
     <ClInclude Include="ReservationManager.h" />
     <ClInclude Include="Room.h" />
