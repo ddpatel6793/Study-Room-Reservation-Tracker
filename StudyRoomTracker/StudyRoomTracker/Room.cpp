@@ -1,7 +1,7 @@
 #include "Room.h"
 #include <iostream>
 Room::Room(int roomNumber, int floor, int capacity) :
-	roomNumber{ roomNumber }, capacity{ capacity }, isReserved{ false } {
+	roomNumber{ roomNumber }, floor{ floor }, capacity {capacity}, isReserved{ false } {
 	//Room class constructor body
 
 }
