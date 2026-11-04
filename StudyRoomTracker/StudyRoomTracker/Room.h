@@ -11,7 +11,7 @@ class Room { // Room abstract class , it has virtual methods
 
 
 	public:
-		Room(int roomNumber, int floor, int capacity,std::string name, std::string T); //Room class constructor
+		Room(int roomNumber, int floorNumber, int capacity,std::string name, std::string T); //Room class constructor
 		int getRoomNumber() const; //returns roomNumber
 		int getCapacity() const; // returns capacity
 		int getFloor() const; 

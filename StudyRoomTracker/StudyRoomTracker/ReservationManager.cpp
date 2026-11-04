@@ -6,6 +6,6 @@
 #include "ReservableLabRoom.h"
 #include "PersonInformation.h"
 
-class ReservationManager {
-	ReservableRegRoom room201(201, 2, 5);
-};
+ReservationManager::void intalizeRooms() {
+
+}
