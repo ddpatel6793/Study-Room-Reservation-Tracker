@@ -17,6 +17,6 @@ std::string ReservableLabRoom::reserve(std::string name, std::string type) {
         }
     }
     else {
-        throw std::runtime_error("room only for ta");
+        throw std::runtime_error("room only for TA");
     }
 }

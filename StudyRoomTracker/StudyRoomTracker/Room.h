@@ -23,6 +23,8 @@ class Room {
 		virtual void cancelReservation(); 
 		void setIsReserved(bool isAvailable); 
 		void setPersonInfo(std::string name, std::string type);
+		std::string getPersonName();
+		std::string getPersonType();
 		virtual ~Room(); 
 
 

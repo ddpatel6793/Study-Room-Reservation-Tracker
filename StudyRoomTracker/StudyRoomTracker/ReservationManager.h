@@ -23,6 +23,7 @@ private:
 
 
 public:
+	std::vector<Room*> getRooms() const;
 	ReservationManager();
 	void viewAllRooms();
 	Room* findRoom(int roomNum);

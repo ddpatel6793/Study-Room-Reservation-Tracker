@@ -21,6 +21,9 @@ ReservationManager::ReservationManager() {
 	rooms.push_back(&room103);
 	rooms.push_back(&room104);
 }
+std::vector<Room*> ReservationManager::getRooms() const {
+	return rooms;
+}
 // VIEWALLROOMS FUNCTION (TASK-1)
 void ReservationManager::viewAllRooms() {
 	std::cout << "VIEW ALL STUDY ROOMS\n";
@@ -53,7 +56,7 @@ std::string ReservationManager::reserveRoom(int roomNumber, std::string name, st
 		return reservationMessage;
 	}
 	else {
-		throw std::runtime_error("room not found");
+		throw std::runtime_error("Room not found");
 
 	}
 }

@@ -155,6 +155,9 @@
     <ClInclude Include="ReservationManager.h" />
     <ClInclude Include="Room.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Study_room_tracker_data.csv" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

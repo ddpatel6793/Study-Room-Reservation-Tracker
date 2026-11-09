@@ -36,3 +36,9 @@ void Room::setPersonInfo(std::string name, std::string type) {
 	personInfo.setName(name);
 	personInfo.setStudentType(type);
 }
+std::string Room ::getPersonName() {
+	return personInfo.getName();
+}
+std::string Room:: getPersonType() {
+	return personInfo.getStudentType();
+}

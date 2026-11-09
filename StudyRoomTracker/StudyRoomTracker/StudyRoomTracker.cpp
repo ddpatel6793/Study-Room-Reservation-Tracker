@@ -1,6 +1,8 @@
 #include <iostream>
 #include "ReservationManager.h"
 #include <string>
+#include<exception>
+#include "FileManager.h"
 
 int main() {
 	std::cout << "Welcome to study Room Reservation Tracker!\n\n";
@@ -8,11 +10,20 @@ int main() {
 	std::cout << "2. Reserve a study Room\n";
 	std::cout << "3. Cancel a Reservation\n";
 	std::cout << "4. Exit\n\n";
-	std::cout << "Please enter the menu option: ";
-	int menuOption;
-	std::cin >> menuOption;
-	std::cout << "\n\n";
+	int menuOption = 0;
+	
 	ReservationManager reservationManagerObject;
+	try {
+		std::cout << "Please enter the menu option: ";
+		std::cin >> menuOption;
+		if (menuOption > 4 || menuOption < 1) {
+			throw std::invalid_argument("You did not choose the valid menu option. Try it again!\n");
+		}
+		std::cout << "\n\n";
+	}
+	catch (const std::invalid_argument& e) {
+		std::cout << e.what() << "\n";
+	}
 	while (menuOption != 4) {
 		if (menuOption == 1) {
 			reservationManagerObject.viewAllRooms();
@@ -39,15 +50,27 @@ int main() {
 			}
 
 		}
-		else {
+		else if (menuOption == 3) {
 			std::cout << " Sorry but we did not implement the 3rd task yet, which is cancel Reservation\n\n";
 			break; //for now, after we implement for cancelReservation() method,
-			          // we need to delete that line... 
+			// we need to delete that line... 
 		}
-		std::cout << "Please enter the menu option: ";
-		int menuOption;
+		else if(menuOption == 4) {
+			std::cout << "Thank You for using our program. You have a wonderful rest of the day!\n";
+			break;
+		}
+		std::cout << "\nEnter the menu option: \n";
 		std::cin >> menuOption;
-		std::cout << "\n\n";
+
+
+		
+	}
+	try {
+		FileManager fileManagerObject(reservationManagerObject);
+		fileManagerObject.writingToFile();
+	}
+	catch (const std::runtime_error& e) {
+		std::cout << e.what() << '\n';
 	}
 	
 	return 0;
