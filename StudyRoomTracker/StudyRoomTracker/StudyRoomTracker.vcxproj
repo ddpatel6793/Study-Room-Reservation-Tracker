@@ -139,6 +139,7 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="PersonInformation.cpp" />
     <ClCompile Include="ReservableLabRoom.cpp" />
     <ClCompile Include="ReservableRegRoom.cpp" />
@@ -147,6 +148,7 @@
     <ClCompile Include="StudyRoomTracker.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FileManager.h" />
     <ClInclude Include="PersonInformation.h" />
     <ClInclude Include="ReservableLabRoom.h" />
     <ClInclude Include="ReservableRegRoom.h" />
