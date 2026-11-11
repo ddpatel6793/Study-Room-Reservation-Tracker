@@ -111,7 +111,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\dhrus\Downloads;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -149,9 +149,9 @@
     <ClCompile Include="StudyRoomTracker.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\..\Downloads\rapidcsv.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="PersonInformation.h" />
+    <ClInclude Include="rapidcsv.h" />
     <ClInclude Include="ReservableLabRoom.h" />
     <ClInclude Include="ReservableRegRoom.h" />
     <ClInclude Include="ReservationManager.h" />
