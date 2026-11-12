@@ -149,7 +149,7 @@
     <ClCompile Include="StudyRoomTracker.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\..\Downloads\rapidcsv.h" />
+    <ClInclude Include="..\..\..\..\rapidcsv.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="PersonInformation.h" />
     <ClInclude Include="ReservableLabRoom.h" />

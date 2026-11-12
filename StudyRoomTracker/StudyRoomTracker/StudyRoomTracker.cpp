@@ -3,6 +3,7 @@
 #include <string>
 #include<exception>
 #include "FileManager.h"
+#include "rapidcsv.h"
 
 int main() {
 	std::cout << "Welcome to study Room Reservation Tracker!\n\n";
@@ -24,7 +25,15 @@ int main() {
 	catch (const std::invalid_argument& e) {
 		std::cout << e.what() << "\n";
 	}
+	try {
+		FileManager fileManagerObject(reservationManagerObject);
+		fileManagerObject.writingToFile();
+	}
+	catch (const std::runtime_error& e) {
+		std::cout << e.what() << '\n';
+	}
 	while (menuOption != 4) {
+		
 		if (menuOption == 1) {
 			reservationManagerObject.viewAllRooms();
 		}
@@ -61,17 +70,17 @@ int main() {
 		}
 		std::cout << "\nEnter the menu option: \n";
 		std::cin >> menuOption;
-
+		try {
+			FileManager fileManagerObject(reservationManagerObject);
+			fileManagerObject.writingToFile();
+		}
+		catch (const std::runtime_error& e) {
+			std::cout << e.what() << '\n';
+		}
 
 		
 	}
-	try {
-		FileManager fileManagerObject(reservationManagerObject);
-		fileManagerObject.writingToFile();
-	}
-	catch (const std::runtime_error& e) {
-		std::cout << e.what() << '\n';
-	}
+	
 	
 	return 0;
 }
