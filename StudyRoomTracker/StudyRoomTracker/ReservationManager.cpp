@@ -61,6 +61,19 @@ std::string ReservationManager::reserveRoom(int roomNumber, std::string name, st
 	}
 }
 
+// Cancel method
+std::string ReservationManager::cancelRoom(int roomNumber, std::string name) {
+	Room* objectOfRoom = findRoom(roomNumber);
+	if (objectOfRoom != nullptr) {
+		std::string reservationMessage = objectOfRoom->cancel(name, type);
+		return reservationMessage;
+	}
+	else {
+		throw std::runtime_error("Room not found");
+
+	}
+}
+
 //findRoom() method:
 Room* ReservationManager::findRoom(int roomNum) {
 

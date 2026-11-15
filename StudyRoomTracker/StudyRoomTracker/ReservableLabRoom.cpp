@@ -20,3 +20,19 @@ std::string ReservableLabRoom::reserve(std::string name, std::string type) {
         throw std::runtime_error("room only for TA");
     }
 }
+
+std::string ReservableLabRoom::cancel(std::string name) {
+    if (name == this->getName()) {
+        if (this->getIsReserved() == true) {
+            setIsReserved(false);
+            setPersonInfo("N/A", "N/A");
+            return "Reservation cancelled!\n";
+        }
+        else {
+            throw std::runtime_error("This room wasn't previously reserved by you\n");
+        }
+    }
+    else {
+        throw std::runtime_error("You are not the person who made the reservation\n");
+    }
+}
