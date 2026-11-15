@@ -74,6 +74,7 @@ Room* ReservationManager::findRoom(int roomNum) {
 		return nullptr;
 	}
 }
+//cancel Reservation room method:
 
 
 
