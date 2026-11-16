@@ -1,5 +1,6 @@
 #include "Room.h"
 #include <iostream>
+#include<string>
 Room::Room(int roomNumber, int floorNumber, int capacity, std::string name, std::string type) :
 	roomNumber{ roomNumber }, floor{ floorNumber }, capacity{ capacity }, isReserved{ false }, personInfo{ name, type } {
 	//Room class constructor  (5 parameters)
@@ -29,9 +30,7 @@ void Room::setIsReserved(bool isAvailable) {
 	isReserved = isAvailable;
 }
 Room::~Room() = default;
-void Room::cancelReservation() {
-	isReserved = false;
-}
+
 void Room::setPersonInfo(std::string name, std::string type) {
 	personInfo.setName(name);
 	personInfo.setStudentType(type);

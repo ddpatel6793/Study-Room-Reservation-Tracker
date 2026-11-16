@@ -20,7 +20,7 @@ class Room {
 		int getFloor() const; 
 		bool getIsReserved() const; 
 		virtual std::string reserve(std::string name, std::string type) = 0; 
-		virtual void cancelReservation(); 
+		virtual std::string cancelReservation(std::string name) = 0;
 		void setIsReserved(bool isAvailable); 
 		void setPersonInfo(std::string name, std::string type);
 		std::string getPersonName();
