@@ -3,12 +3,16 @@
 #include <vector>
 #include<iostream>
 #include "ReservationManager.h"
+#include<QInputDialog>
+#include<string>
 StudyRoomTrackerGUI::StudyRoomTrackerGUI(QWidget *parent)
     : QMainWindow(parent)
 {
     ui.setupUi(this);
     connect(ui.viewAllRoomsButton, &QPushButton::clicked,
         this, &StudyRoomTrackerGUI::onViewAllRoomsClicked);
+    connect(ui.reserveRoomButton, &QPushButton::clicked, this, &StudyRoomTrackerGUI::onReserveRoomClicked);
+    connect(ui.CancelReservationButton, &QPushButton::clicked, this, &StudyRoomTrackerGUI::onCancelReservationClicked);
 }
 
 StudyRoomTrackerGUI::~StudyRoomTrackerGUI()
@@ -36,8 +40,60 @@ void StudyRoomTrackerGUI::onViewAllRoomsClicked()
 
         
     }
+
     
     
     QMessageBox::information(this, "Study Room Tracker", roomInformation);
 }
+
+void StudyRoomTrackerGUI::onReserveRoomClicked() {
+    bool ok;
+    int roomNumber = QInputDialog::getInt(this, "Reserve Room", "Enter the room number: ", 0, -2147483647, 2147483647, 1, &ok);
+    if (!ok) {
+        return;
+    }
+    //drop down choices instead of typing:
+    QStringList studentTypes = { "Student", "TA" };
+    QString studentType = QInputDialog::getItem(this, "Reserve Room", "Are you a Student or TA?", studentTypes, 0, false, &ok);
+    if (!ok) {
+        return;
+    }
+    QString studentName = QInputDialog::getText(this, "Reserve Room", "Enter your name: ", QLineEdit::Normal, "", &ok);
+    if (!ok) {
+        return;
+    }
+    std::string name = studentName.toStdString();
+    std::string studenttype = studentType.toStdString();
+    try {
+        reservationManagerObject.reserveRoom(roomNumber, name, studenttype);
+        QMessageBox::information(this, "Reservation Successful", "Room successfully reserved!");
+    }
+    catch (const std::exception& e) {
+        QMessageBox::warning(this, "Reservation Failed", e.what());
+       
+    }
+}
+void StudyRoomTrackerGUI::onCancelReservationClicked() {
+    bool ok;
+    QString studentName = QInputDialog::getText(this, "Cancel Reservation", "Enter your name: ", QLineEdit::Normal, "", &ok);
+    if (!ok) {
+        return;
+    }
+    int roomNumber = QInputDialog::getInt(this, "Cancel Room", "Enter the room number: ", 0, -2147483647, 2147483647, 1, &ok);
+    if (!ok) {
+        return;
+    }
+    std::string regularName = studentName.toStdString();
+    try {
+        reservationManagerObject.cancelingReservation(regularName, roomNumber);
+        QMessageBox::information(this, "Room reservation", "Cancelled Successfully");
+
+    }
+    catch (const std::exception& e) {
+        QMessageBox::warning(this, "Reservation Failed", e.what());
+    }
+}
+ 
+    
+
 

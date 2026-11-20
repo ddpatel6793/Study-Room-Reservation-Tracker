@@ -28,4 +28,7 @@ public:
 	void viewAllRooms();
 	Room* findRoom(int roomNum);
 	std::string reserveRoom(int roomNumber, std::string name, std::string type);
+	std::string cancelingReservation(std::string name, int roomNumber);
+
+
 };

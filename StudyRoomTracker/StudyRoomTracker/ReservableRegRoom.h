@@ -5,5 +5,7 @@ class ReservableRegRoom:public Room {
 	public:
 		ReservableRegRoom(int number, int floor, int capacity);
 		std::string reserve(std::string name, std::string type) override;
+		std::string cancelReservation(std::string name) override;
+
 
 };

@@ -14,9 +14,12 @@ public:
 
 private slots:
     void onViewAllRoomsClicked();
+    void onReserveRoomClicked();
+    void onCancelReservationClicked();
 
 private:
     Ui::StudyRoomTrackerGUIClass ui;
     ReservationManager reservationManagerObject;
+    
 };
 
