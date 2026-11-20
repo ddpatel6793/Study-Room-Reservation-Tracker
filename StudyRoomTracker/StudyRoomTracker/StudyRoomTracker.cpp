@@ -14,6 +14,16 @@ int main() {
 	int menuOption = 0;
 	
 	ReservationManager reservationManagerObject;
+	FileManager fileManagerObject(reservationManagerObject); 
+
+	//Attempt to load saved reservations from previous run, or if there is no previous run say this is the first run
+	try {
+		fileManagerObject.readingFromFile();
+	}
+	catch (const std::runtime_error& e) {
+		std::cout << "Starting fresh (no existing save loaded): " << e.what() << '\n';
+	}
+
 	try {
 		std::cout << "Please enter the menu option: ";
 		std::cin >> menuOption;
